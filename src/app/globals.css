@@ -1,26 +1,199 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* C.A.N brand kit: CAN Red / Black / White primary, Warm Sand / Calm Teal secondary */
+  --bg: #fbf6ef;
+  --surface: #ffffff;
+  --surface-2: #f2e6d4;
+  --text: #17130f;
+  --muted: #5c5347;
+  --primary: #be0117;
+  --primary-dark: #8c0212;
+  --primary-soft: #fce3e6;
+  --accent: #3f6d6b;
+  --accent-dark: #294b49;
+  --accent-soft: #e3eeed;
+  --sun: #e6d5be;
+  --sun-soft: #f4e9d9;
+  --sage: #dfebea;
+  --ink: #101010;
+  --border: #e7d9c2;
+  --focus: #be0117;
+  --font-scale: 1;
+}
+
+html[data-contrast="high"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ffffff;
+  --text: #000000;
+  --muted: #000000;
+  --primary: #000000;
+  --primary-dark: #000000;
+  --primary-soft: #ffffff;
+  --accent: #000000;
+  --accent-dark: #000000;
+  --accent-soft: #ffffff;
+  --sun: #ffff00;
+  --sun-soft: #ffffff;
+  --sage: #ffffff;
+  --ink: #000000;
+  --border: #000000;
+  --focus: #0000ff;
+}
+
+html[data-contrast="high"] * {
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+html[data-contrast="high"] a {
+  text-decoration: underline;
+}
+
+html[data-fontsize="large"] {
+  --font-scale: 1.15;
+}
+
+html[data-fontsize="xlarge"] {
+  --font-scale: 1.3;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-soft: var(--accent-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-sage: var(--sage);
+  --color-black: var(--ink);
+  --color-line: var(--border);
+  --font-sans: var(--font-display), system-ui, sans-serif;
+  --radius-card: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: calc(100% * var(--font-scale));
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+p {
+  max-width: 68ch;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: top 0.15s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html[data-motion="reduced"] {
+  scroll-behavior: auto;
+}
+
+html[data-motion="reduced"] .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation: none !important;
+  transition-duration: 0.01ms !important;
+}
+
+.prose-can h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.prose-can h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-can li::marker {
+  color: var(--primary);
+}
+
+.prose-can p,
+.prose-can li {
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.prose-can ul {
+  list-style: disc;
+  padding-left: 1.5rem;
 }

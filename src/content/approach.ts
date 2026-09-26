@@ -1,0 +1,58 @@
+export type Stage = { step: number; name: string; title: string; body: string; parent: string; child: string; timeline: string };
+
+export const stages: Stage[] = [
+  {
+    step: 1,
+    name: "Understand",
+    title: "Discover the child behind the challenge",
+    body: "We listen, observe, assess, and learn about the child's strengths, needs, and aspirations.",
+    parent: "An intake conversation that values your intuition as much as professional inputs.",
+    child: "Low-pressure sessions to get to know the centre and the people in it.",
+    timeline: "First 2 to 3 weeks",
+  },
+  {
+    step: 2,
+    name: "Connect",
+    title: "Bring the right people together",
+    body: "We bring together remedial education, therapeutic interventions, psychological support, and inclusive learning practices to create a connected support system for children and their families.",
+    parent: "One team around your child: special educators, therapists, counsellors and a parent coach.",
+    child: "Familiar faces who talk to each other, so nothing has to be explained twice.",
+    timeline: "Weeks 2 to 4",
+  },
+  {
+    step: 3,
+    name: "Plan",
+    title: "Create a pathway that fits",
+    body: "We establish meaningful, individualised goals and identify strategies that work for the child.",
+    parent: "An Individualized Education Plan (IEP) shared with you, with goals you helped shape.",
+    child: "Goals that make sense to them, in words they understand.",
+    timeline: "By the end of month 1",
+  },
+  {
+    step: 4,
+    name: "Support",
+    title: "Build skills. Nurture confidence.",
+    body: "We provide targeted remedial, therapeutic, and developmental support through engaging, child-centred practices and internationally validated programs.",
+    parent: "Parent coaching alongside sessions, and a parent pod to work or unwind while your child is with us.",
+    child: "One-on-one remedial sessions and small groups of 4 to 6, at a pace that fits.",
+    timeline: "Ongoing, in terms of 3 months",
+  },
+  {
+    step: 5,
+    name: "Review",
+    title: "Reflect, adapt, grow",
+    body: "We monitor progress, listen to feedback, and refine our approach as the child moves ahead in their life journey.",
+    parent: "Monthly internal reviews across every professional, and a written progress report every term.",
+    child: "Celebrating what's working and adjusting what isn't.",
+    timeline: "Monthly internal, termly with parents",
+  },
+  {
+    step: 6,
+    name: "Empower",
+    title: "Prepare for a world of possibilities",
+    body: "We build self-advocacy and the confidence to participate more independently in everyday life, working towards making ourselves redundant.",
+    parent: "Planning for school transitions, accommodations and what comes next.",
+    child: "The skills and confidence to fly on their own strengthened wings.",
+    timeline: "As skills are mastered",
+  },
+];
