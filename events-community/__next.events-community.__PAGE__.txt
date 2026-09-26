@@ -1,0 +1,22 @@
+1:"$Sreact.fragment"
+2:I[96199,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js","/can-website/_next/static/chunks/1an7rsjrgowj7.js"],"Reveal"]
+3:I[22016,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js","/can-website/_next/static/chunks/1an7rsjrgowj7.js"],""]
+4:I[97367,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"ViewportBoundary"]
+a:I[97367,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"MetadataBoundary"]
+b:I[27201,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"IconMark"]
+d:I[39756,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"default"]
+e:I[37457,["/can-website/_next/static/chunks/3fntmmi971322.js","/can-website/_next/static/chunks/3u-66a106l4qd.js"],"default"]
+8:X
+10:X
+10:C
+0:{"buildId":"QDQFJw5egcJp0tQL32NuM","data":[{"rsc":["$","$1","c",{"children":[[["$","div",null,{"className":"border-b border-line py-14 sm:py-20","children":["$","div",null,{"className":"mx-auto w-full max-w-5xl px-6 sm:px-8 ","children":[["$","p",null,{"className":"mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted","children":"Events and community"}],["$","h1",null,{"className":"font-semibold leading-snug tracking-tight text-3xl sm:text-4xl text-ink max-w-2xl","children":"Learn with us, in person and online."}],["$","p",null,{"className":"mt-3 max-w-2xl text-base sm:text-lg text-muted","children":"Events we host, events we join as panelists or trainers, and curated community events (for example at NIMHANS) that may interest families."}]]}]}],["$","section",null,{"className":"py-14 sm:py-20 border-b border-line  ","children":["$","div",null,{"className":"mx-auto w-full max-w-5xl px-6 sm:px-8 ","children":["$","$L2",null,{"children":["$","div",null,{"className":"rounded p-6 bg-surface-2 max-w-2xl","children":[["$","h3",null,{"className":"font-semibold leading-snug tracking-tight text-lg text-ink ","children":"The calendar is being finalised."}],["$","p",null,{"className":"mt-2 text-muted","children":"Summer programs, study-skills programs and communication programs run at specific times of the year. Write to us to hear about the next ones first."}],["$","$L3",null,{"href":"mailto:can@wadhwafoundation.com?subject=Please notify me about C.A.N events","className":"inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors bg-primary text-white hover:bg-primary-dark mt-4","children":["Get notified",["$","span",null,{"aria-hidden":"true","children":"→"}]]}]]}]}]}]}]],[["$","script","script-0",{"src":"/can-website/_next/static/chunks/1an7rsjrgowj7.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Events and community | C.A.N"}],["$","meta","1",{"name":"description","content":"Workshops, parent sessions and community events hosted or joined by C.A.N in Bengaluru."}],["$","link","2",{"rel":"icon","href":"/can-website/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$Lb","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":"$@c","staleTime":"$8","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Ld",null,{"parallelRouterKey":"children","template":["$","$Le",null,{}]}]]}],"isPartial":"$@f","staleTime":"$8","varyParams":"$10"}],"isUpgradeableISRFallback":false,"a":"$@11","rootVaryParams":null,"needsRuntimeRequest":"$@12"}
+6:null
+12:true
+8:300
+8:C
+11:0
+c:"$undefined"
+f:"$undefined"
+7:"$undefined"
