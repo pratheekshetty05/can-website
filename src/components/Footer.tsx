@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 const columns = [
   {
@@ -38,7 +39,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-4">
         <div>
-          <Image src="/brand/can-logo-compact.png" alt={site.fullName} width={149} height={105} className="h-12 w-auto" />
+          <Image src={asset("/brand/can-logo-compact.png")} alt={site.fullName} width={149} height={105} className="h-12 w-auto" />
           <address className="mt-5 not-italic text-muted">
             {site.address.map((l) => (
               <span key={l} className="block">

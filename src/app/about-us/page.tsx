@@ -4,6 +4,7 @@ import { Button, Card, Eyebrow, Heading, PageHero, Placeholder, Section } from "
 import { Reveal } from "@/components/Reveal";
 import { team } from "@/content/team";
 import { values } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = { title: "About us", description: "Our story, vision, values and the team behind C.A.N in Bengaluru." };
 
@@ -68,7 +69,7 @@ export default function AboutPage() {
             <Reveal key={m.name} delay={(i % 4) * 70}>
               <article className="flex h-full flex-col rounded-card border border-line bg-surface p-5">
                 {m.photo ? (
-                  <Image src={m.photo} alt={`${m.name}, ${m.role.split("|")[0].trim()}`} width={400} height={400} className="aspect-square w-full rounded-xl object-cover" />
+                  <Image src={asset(m.photo)} alt={`${m.name}, ${m.role.split("|")[0].trim()}`} width={400} height={400} className="aspect-square w-full rounded-xl object-cover" />
                 ) : (
                   <div aria-hidden="true" className="flex aspect-square w-full items-center justify-center rounded-xl bg-primary-soft text-4xl font-semibold text-ink">
                     {m.name

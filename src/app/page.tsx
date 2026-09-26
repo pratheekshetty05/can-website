@@ -8,6 +8,7 @@ import { featuredFaqs } from "@/content/faq";
 import { services } from "@/content/services";
 import { events } from "@/content/resources";
 import { values } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 const audiences = [
   { title: "Is your child struggling at school?", body: "Dyslexia, ADHD, autism or a learning gap: you don't need a diagnosis to talk to us. We help you understand what's going on and what kind of support fits.", href: "/services", cta: "See how we help" },
@@ -28,7 +29,7 @@ export default function HomePage() {
       <div className="relative h-[88vh] min-h-[560px] max-h-[840px] overflow-hidden border-b border-line">
         <Parallax strength={44} className="absolute inset-0">
           <Image
-            src="/images/hero-reception.jpg"
+            src={asset("/images/hero-reception.jpg")}
             alt="The C.A.N centre in Kumara Park: a bright, calm learning space"
             fill
             priority

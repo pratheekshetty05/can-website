@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { nav } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -22,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center" aria-label="C.A.N home">
-          <Image src="/brand/can-logo-compact.png" alt="C.A.N — Centre for Action on Neurodiversity" width={149} height={105} className="h-12 w-auto" priority />
+          <Image src={asset("/brand/can-logo-compact.png")} alt="C.A.N — Centre for Action on Neurodiversity" width={149} height={105} className="h-12 w-auto" priority />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">

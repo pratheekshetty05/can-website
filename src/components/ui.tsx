@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Reveal } from "./Reveal";
+import { asset } from "@/lib/asset";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-5xl px-6 sm:px-8 ${className}`}>{children}</div>;
@@ -127,7 +128,7 @@ export function Placeholder({
   return (
     <div className={`${ratio} relative w-full overflow-hidden rounded border border-line ${className}`}>
       <Image
-        src={src}
+        src={asset(src)}
         alt={label}
         fill
         sizes={sizes}
