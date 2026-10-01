@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Button, Heading, PageHero, Section } from "@/components/ui";
+import { Icon, type IconKind } from "@/components/Icon";
 import { faqs } from "@/content/faq";
 
 export const metadata: Metadata = { title: "FAQ", description: "Answers to the questions parents, schools and professionals most often ask C.A.N." };
 
 const groups = ["Getting started", "Families", "Safety and privacy", "Schools and professionals"] as const;
+const groupIcons: Record<(typeof groups)[number], IconKind> = {
+  "Getting started": "search",
+  Families: "heart",
+  "Safety and privacy": "clipboard",
+  "Schools and professionals": "chalkboard",
+};
 
 export default function FaqPage() {
   const jsonLd = {
@@ -16,7 +23,7 @@ export default function FaqPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PageHero eyebrow="FAQ" title="Questions parents ask us" lead="Straight answers, in the order people usually ask them." />
+      <PageHero eyebrow="FAQ" title="Questions parents ask us" lead="Straight answers, in the order people usually ask them." tone="amber" mascotSrc="/mascot/read.png" />
       <Section>
         <nav aria-label="FAQ sections" className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-b border-line pb-6 text-sm font-medium">
           {groups.map((g) => (
@@ -28,7 +35,10 @@ export default function FaqPage() {
         <div className="space-y-12">
           {groups.map((g) => (
             <div key={g} id={g.toLowerCase().replace(/\s+/g, "-")}>
-              <Heading>{g}</Heading>
+              <div className="flex items-center gap-2">
+                <Icon kind={groupIcons[g]} className="h-6 w-6 text-primary" />
+                <Heading>{g}</Heading>
+              </div>
               <div className="mt-4 divide-y divide-line rounded-card border border-line bg-surface">
                 {faqs
                   .filter((f) => f.group === g)

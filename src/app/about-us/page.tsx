@@ -10,7 +10,13 @@ export const metadata: Metadata = { title: "About us", description: "Our story, 
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About C.A.N" title="A home away from home for children who learn differently." lead="Neither a school nor a clinic: a space where children feel understood and safe while learning critical skills." />
+      <PageHero
+        eyebrow="About C.A.N"
+        title="A home away from home for children who learn differently."
+        lead="Neither a school nor a clinic: a space where children feel understood and safe while learning critical skills."
+        tone="teal"
+        mascotSrc="/mascot/bird-perch.png"
+      />
 
       <Section>
         <Placeholder label="A quiet reading corner at the C.A.N centre" src="/images/about-reading-nook.jpg" ratio="aspect-[21/9]" className="mb-10" />
@@ -29,14 +35,14 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid gap-4">
-            <Card tone="primary">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">Vision</p>
+            <Card tone="amber">
+              <p className="text-sm font-semibold uppercase tracking-wide text-ink">Vision</p>
               <p className="mt-2">
                 To create an inclusive, compassionate, and scientifically grounded learning ecosystem with aware, accessible, affordable, and available, internationally validated, evidence-based therapies, educational and allied services for children with diverse learning and life needs.
               </p>
             </Card>
-            <Card tone="soft">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">Mission</p>
+            <Card tone="coral">
+              <p className="text-sm font-semibold uppercase tracking-wide text-ink">Mission</p>
               <p className="mt-2">
                 To empower children with high-quality services from assessment to therapy under one roof, support parents to be the parents their child needs, and equip teachers and schools with methods and systems that enrich every classroom.
               </p>
@@ -51,7 +57,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 60}>
-              <Card>
+              <Card tone={(["amber", "coral", "accent"] as const)[i % 3]}>
                 <p className="font-semibold text-ink">{v.title}</p>
                 <p className="mt-1 text-sm text-muted">{v.body}</p>
               </Card>

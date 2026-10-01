@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Card, Eyebrow, Heading, PageHero, Section } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 import { ReferralForm } from "@/components/ReferralForm";
 
 export const metadata: Metadata = { title: "For professionals", description: "Paediatricians, psychologists, counsellors and teachers can refer a child to C.A.N in two minutes." };
@@ -7,7 +8,13 @@ export const metadata: Metadata = { title: "For professionals", description: "Pa
 export default function ProfessionalsPage() {
   return (
     <>
-      <PageHero eyebrow="For professionals" title="Partner with us on referrals." lead="For paediatricians, psychologists, counsellors and teachers who see a child who could use more support than they can give alone." />
+      <PageHero
+        eyebrow="For professionals"
+        title="Partner with us on referrals."
+        lead="For paediatricians, psychologists, counsellors and teachers who see a child who could use more support than they can give alone."
+        tone="teal"
+        mascotSrc="/mascot/bird-nest-read.png"
+      />
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
@@ -28,8 +35,9 @@ export default function ProfessionalsPage() {
                 </li>
               ))}
             </ol>
-            <Card tone="soft" className="mt-6">
-              <p className="text-sm">
+            <Card tone="accent" className="mt-6">
+              <Icon kind="clipboard" className="h-7 w-7 text-ink" />
+              <p className="mt-3 text-sm">
                 <span className="font-semibold">Privacy notice.</span> The details you share are used only to contact the family and understand the referral. They are stored confidentially, accessed on a need-to-know basis, and never shared with third parties. Please do not include clinical reports in this form.
               </p>
             </Card>

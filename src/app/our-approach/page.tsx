@@ -4,10 +4,18 @@ import { stages } from "@/content/approach";
 
 export const metadata: Metadata = { title: "Our approach", description: "The six-stage parent and child journey at C.A.N: understand, connect, plan, support, review, empower." };
 
+const stageTones = ["bg-amber-soft", "bg-coral-soft", "bg-accent-soft"];
+
 export default function ApproachPage() {
   return (
     <>
-      <PageHero eyebrow="Our approach" title="What happens when you come to C.A.N" lead="Plain language, no surprises. Here is the journey for you and for your child, stage by stage." />
+      <PageHero
+        eyebrow="Our approach"
+        title="What happens when you come to C.A.N"
+        lead="Plain language, no surprises. Here is the journey for you and for your child, stage by stage."
+        tone="teal"
+        mascotSrc="/mascot/hero-celebrate.png"
+      />
 
       <Section>
         <p className="max-w-3xl text-lg">
@@ -17,8 +25,8 @@ export default function ApproachPage() {
 
       <Section tone="soft">
         <ol className="space-y-6">
-          {stages.map((s) => (
-            <li key={s.step} className="grid gap-6 rounded-card bg-surface p-6 lg:grid-cols-[auto_1fr_1fr_1fr]">
+          {stages.map((s, i) => (
+            <li key={s.step} className={`grid gap-6 rounded-card p-6 lg:grid-cols-[auto_1fr_1fr_1fr] ${stageTones[i % stageTones.length]}`}>
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-xl font-semibold text-white" aria-hidden="true">
                 {s.step}
               </div>

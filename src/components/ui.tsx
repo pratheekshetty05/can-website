@@ -13,23 +13,29 @@ export function Section({
   tone = "default",
   border = true,
   className = "",
+  noRevealWrapper = false,
 }: {
   children: ReactNode;
   id?: string;
-  tone?: "default" | "soft" | "primary";
+  tone?: "default" | "soft" | "primary" | "amber" | "coral" | "teal";
   border?: boolean;
   className?: string;
+  /** Skip the outer fade-in wrapper — it applies a CSS transform that breaks
+   * GSAP ScrollTrigger's `pin: true` on any descendant (fixed-position pins
+   * resolve against the nearest transformed ancestor, not the viewport). */
+  noRevealWrapper?: boolean;
 }) {
   const tones = {
     default: "",
     soft: "bg-surface-2",
     primary: "bg-primary text-white",
+    amber: "bg-amber-soft",
+    coral: "bg-coral-soft",
+    teal: "bg-accent-soft",
   };
   return (
     <section id={id} className={`py-14 sm:py-20 ${border ? "border-b border-line" : ""} ${tones[tone]} ${className}`}>
-      <Container>
-        <Reveal>{children}</Reveal>
-      </Container>
+      <Container>{noRevealWrapper ? children : <Reveal>{children}</Reveal>}</Container>
     </section>
   );
 }
@@ -41,7 +47,7 @@ export function Eyebrow({ children, light = false }: { children: ReactNode; ligh
 export function Heading({ children, as: Tag = "h2", light = false, className = "" }: { children: ReactNode; as?: "h1" | "h2" | "h3"; light?: boolean; className?: string }) {
   const size = Tag === "h1" ? "text-3xl sm:text-4xl" : Tag === "h2" ? "text-2xl sm:text-3xl" : "text-lg";
   return (
-    <Tag className={`font-semibold leading-snug tracking-tight ${size} ${light ? "text-white" : "text-ink"} ${className}`}>
+    <Tag className={`font-fun font-semibold leading-snug tracking-tight ${size} ${light ? "text-white" : "text-ink"} ${className}`}>
       {children}
     </Tag>
   );
@@ -76,31 +82,55 @@ export function Button({
     light: "bg-white text-ink hover:bg-surface-2",
   };
   return (
-    <Link href={href} className={`inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors ${variants[variant]} ${className}`}>
+    <Link href={href} className={`font-fun inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors ${variants[variant]} ${className}`}>
       {children}
       <span aria-hidden="true">→</span>
     </Link>
   );
 }
 
-export function Card({ children, className = "", tone = "surface" }: { children: ReactNode; className?: string; tone?: "surface" | "soft" | "primary" }) {
+export function Card({ children, className = "", tone = "surface" }: { children: ReactNode; className?: string; tone?: "surface" | "soft" | "primary" | "amber" | "coral" | "accent" }) {
   const tones = {
     surface: "bg-surface border border-line",
     soft: "bg-surface-2",
     primary: "bg-primary-soft",
+    amber: "bg-amber-soft",
+    coral: "bg-coral-soft",
+    accent: "bg-accent-soft",
   };
   return <div className={`rounded p-6 ${tones[tone]} ${className}`}>{children}</div>;
 }
 
-export function PageHero({ eyebrow, title, lead }: { eyebrow?: string; title: string; lead?: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  lead,
+  tone = "default",
+  mascotSrc,
+}: {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  tone?: "default" | "amber" | "coral" | "teal";
+  /** Small mascot illustration shown beside the heading — the same reusable touch across every page. */
+  mascotSrc?: string;
+}) {
+  const tones = { default: "bg-bg", amber: "bg-amber-soft", coral: "bg-coral-soft", teal: "bg-accent-soft" };
   return (
-    <div className="border-b border-line py-14 sm:py-20">
-      <Container>
-        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <Heading as="h1" className="max-w-2xl">
-          {title}
-        </Heading>
-        {lead && <Lead>{lead}</Lead>}
+    <div className={`border-b border-line py-14 sm:py-20 ${tones[tone]}`}>
+      <Container className="flex items-center justify-between gap-10">
+        <div>
+          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+          <Heading as="h1" className="max-w-2xl">
+            {title}
+          </Heading>
+          {lead && <Lead>{lead}</Lead>}
+        </div>
+        {mascotSrc && (
+          <div className="hidden w-32 shrink-0 md:block lg:w-40">
+            <Image src={mascotSrc} alt="" aria-hidden="true" width={400} height={400} className="h-auto w-full object-contain" />
+          </div>
+        )}
       </Container>
     </div>
   );

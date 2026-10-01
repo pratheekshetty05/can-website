@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Card, Eyebrow, Heading, PageHero, Section } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = { title: "Safeguarding and child protection", description: "How C.A.N keeps children safe physically, mentally and emotionally, and how to report a concern." };
@@ -7,7 +8,13 @@ export const metadata: Metadata = { title: "Safeguarding and child protection", 
 export default function SafeguardingPage() {
   return (
     <>
-      <PageHero eyebrow="Safeguarding and child protection" title="Every child safe, every day." lead="This page is one tap from anywhere on our site because it matters more than anything else we do." />
+      <PageHero
+        eyebrow="Safeguarding and child protection"
+        title="Every child safe, every day."
+        lead="This page is one tap from anywhere on our site because it matters more than anything else we do."
+        tone="teal"
+        mascotSrc="/mascot/bird-nest-rest.png"
+      />
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
@@ -31,7 +38,10 @@ export default function SafeguardingPage() {
           </div>
           <div className="space-y-4">
             <Card tone="soft">
-              <Heading as="h3">Report a concern</Heading>
+              <Icon kind="clipboard" className="h-7 w-7 text-accent" />
+              <Heading as="h3" className="mt-3">
+                Report a concern
+              </Heading>
               <p className="mt-2 text-sm">If you are worried about a child’s safety at C.A.N, or about the conduct of anyone connected with us, contact our safeguarding lead directly. Every report is taken seriously and handled confidentially.</p>
               <dl className="mt-4 space-y-2 text-sm">
                 <div>
@@ -53,7 +63,10 @@ export default function SafeguardingPage() {
               </dl>
             </Card>
             <Card tone="soft">
-              <Heading as="h3">If a child is in immediate danger</Heading>
+              <Icon kind="heart" className="h-7 w-7 text-accent" />
+              <Heading as="h3" className="mt-3">
+                If a child is in immediate danger
+              </Heading>
               <p className="mt-2 text-sm">
                 Call Childline India on <a href="tel:1098" className="font-semibold underline">1098</a> (free, 24 hours) or the police on <a href="tel:112" className="font-semibold underline">112</a>.
               </p>

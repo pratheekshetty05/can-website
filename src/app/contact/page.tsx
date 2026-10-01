@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Card, Eyebrow, Heading, PageHero, Section } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 import { ReferralForm } from "@/components/ReferralForm";
 import { site } from "@/content/site";
 
@@ -9,12 +10,15 @@ export default function ContactPage() {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(site.address.join(", "))}&output=embed`;
   return (
     <>
-      <PageHero eyebrow="Contact" title="Book a visit" lead="Drop in and help us help you. No diagnosis needed, and no question is too small." />
+      <PageHero eyebrow="Contact" title="Book a visit" lead="Drop in and help us help you. No diagnosis needed, and no question is too small." tone="teal" mascotSrc="/mascot/wave.png" />
       <Section>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
-            <Card>
-              <Eyebrow>Find us</Eyebrow>
+            <Card tone="accent">
+              <Icon kind="home" className="h-7 w-7 text-ink" />
+              <div className="mt-3">
+                <Eyebrow>Find us</Eyebrow>
+              </div>
               <address className="not-italic">
                 {site.address.map((l) => (
                   <span key={l} className="block">
@@ -43,8 +47,11 @@ export default function ContactPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <Card tone="soft">
-              <Heading as="h3">What happens when you write to us</Heading>
+            <Card tone="coral">
+              <Icon kind="clipboard" className="h-7 w-7 text-ink" />
+              <Heading as="h3" className="mt-3">
+                What happens when you write to us
+              </Heading>
               <p className="mt-2 text-sm">We reply within two working days to arrange a first conversation, in person at the centre. That conversation is about your child’s strengths and needs, and about what kind of support might fit. Nothing is decided without you.</p>
             </Card>
           </div>

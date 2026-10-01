@@ -20,6 +20,13 @@
   --border: #e7d9c2;
   --focus: #be0117;
   --font-scale: 1;
+
+  /* Expression palette: fun accents only — illustration, mascot, hover, badges.
+     Never on body text or transactional UI (forms, safeguarding, contact). */
+  --amber: #d97706;
+  --amber-soft: #fbe8cc;
+  --coral: #f0653e;
+  --coral-soft: #fde3da;
 }
 
 html[data-contrast="high"] {
@@ -40,6 +47,10 @@ html[data-contrast="high"] {
   --ink: #000000;
   --border: #000000;
   --focus: #0000ff;
+  --amber: #000000;
+  --amber-soft: #ffffff;
+  --coral: #000000;
+  --coral-soft: #ffffff;
 }
 
 html[data-contrast="high"] * {
@@ -76,8 +87,14 @@ html[data-fontsize="xlarge"] {
   --color-sage: var(--sage);
   --color-black: var(--ink);
   --color-line: var(--border);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
   --font-sans: var(--font-display), system-ui, sans-serif;
+  --font-fun: var(--font-fredoka), var(--font-display), system-ui, sans-serif;
   --radius-card: 0.5rem;
+  --radius-clay: 1.5rem;
 }
 
 html {
@@ -196,4 +213,19 @@ html[data-motion="reduced"] *::after {
 .prose-can ul {
   list-style: disc;
   padding-left: 1.5rem;
+}
+
+/* Claymorphism-lite: chunky rounded shape + soft double shadow, for playful moments only
+   (mascot frame, hero CTA, card hover) — never the whole page. */
+.clay {
+  border-radius: var(--radius-clay);
+  box-shadow:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 8px rgba(16, 16, 16, 0.06),
+    6px 8px 0 rgba(16, 16, 16, 0.08);
+}
+
+html[data-contrast="high"] .clay {
+  box-shadow: none;
+  border: 2px solid var(--border);
 }

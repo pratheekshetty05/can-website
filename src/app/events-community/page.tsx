@@ -10,11 +10,17 @@ const kinds = ["C.A.N event", "C.A.N participating", "Community event"] as const
 export default function EventsPage() {
   return (
     <>
-      <PageHero eyebrow="Events and community" title="Learn with us, in person and online." lead="Events we host, events we join as panelists or trainers, and curated community events (for example at NIMHANS) that may interest families." />
+      <PageHero
+        eyebrow="Events and community"
+        title="Learn with us, in person and online."
+        lead="Events we host, events we join as panelists or trainers, and curated community events (for example at NIMHANS) that may interest families."
+        tone="coral"
+        mascotSrc="/mascot/celebrate.png"
+      />
 
       <Section>
         {events.length === 0 ? (
-          <Card tone="soft" className="max-w-2xl">
+          <Card tone="coral" className="max-w-2xl">
             <Heading as="h3">The calendar is being finalised.</Heading>
             <p className="mt-2 text-muted">Summer programs, study-skills programs and communication programs run at specific times of the year. Write to us to hear about the next ones first.</p>
             <Button href={`mailto:${site.email}?subject=Please notify me about C.A.N events`} variant="primary" className="mt-4">
@@ -24,8 +30,8 @@ export default function EventsPage() {
         ) : (
           <>
             <div className="mb-6 flex flex-wrap gap-2" aria-label="Event types">
-              {kinds.map((k) => (
-                <span key={k} className="rounded-full bg-surface-2 px-3 py-1 text-sm font-medium">
+              {kinds.map((k, i) => (
+                <span key={k} className={`rounded-full px-3 py-1 text-sm font-medium text-ink ${["bg-amber-soft", "bg-coral-soft", "bg-accent-soft"][i % 3]}`}>
                   {k}
                 </span>
               ))}

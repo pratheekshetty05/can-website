@@ -1,28 +1,36 @@
 import type { Metadata } from "next";
 import { Button, Card, Eyebrow, Heading, PageHero, Section } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 import { services } from "@/content/services";
 
 export const metadata: Metadata = { title: "Services", description: "Assessments, remedial education, therapies, early intervention, parent coaching and homeschool support at C.A.N Bengaluru." };
 
+const infoCards = [
+  { icon: "people" as const, tone: "amber" as const, title: "Who we support", body: "Children with dyslexia, specific learning difficulties, ADHD, autism, developmental delays, emotional and behavioural challenges, and learning gaps." },
+  { icon: "home" as const, tone: "coral" as const, title: "How sessions run", body: "In-centre, in Kumara Park. Remedial sessions are one-on-one; groups are 4 to 6. Online only for families outside Bengaluru." },
+  { icon: "fee" as const, tone: "accent" as const, title: "Fees", body: "Affordable and transparent. Packages are built around your family's needs, so we don't publish a standard price. Talk to us." },
+];
+
 export default function ServicesPage() {
   return (
     <>
-      <PageHero eyebrow="Services" title="Quality services from assessment to therapy, under one roof." lead="Afterschool support for students in inclusive schools, small groups for homeschoolers and NIOS students, and early intervention for young children." />
+      <PageHero
+        eyebrow="Services"
+        title="Quality services from assessment to therapy, under one roof."
+        lead="Afterschool support for students in inclusive schools, small groups for homeschoolers and NIOS students, and early intervention for young children."
+        tone="coral"
+        mascotSrc="/mascot/bird-soar.png"
+      />
 
       <Section>
         <div className="grid gap-6 md:grid-cols-3">
-          <Card tone="soft">
-            <p className="font-semibold text-ink">Who we support</p>
-            <p className="mt-1 text-sm text-muted">Children with dyslexia, specific learning difficulties, ADHD, autism, developmental delays, emotional and behavioural challenges, and learning gaps.</p>
-          </Card>
-          <Card tone="soft">
-            <p className="font-semibold text-ink">How sessions run</p>
-            <p className="mt-1 text-sm text-muted">In-centre, in Kumara Park. Remedial sessions are one-on-one; groups are 4 to 6. Online only for families outside Bengaluru.</p>
-          </Card>
-          <Card tone="soft">
-            <p className="font-semibold text-ink">Fees</p>
-            <p className="mt-1 text-sm text-muted">Affordable and transparent. Packages are built around your family’s needs, so we don’t publish a standard price. Talk to us.</p>
-          </Card>
+          {infoCards.map((c) => (
+            <Card key={c.title} tone={c.tone}>
+              <Icon kind={c.icon} className="h-7 w-7 text-ink" />
+              <p className="mt-3 font-semibold text-ink">{c.title}</p>
+              <p className="mt-1 text-sm text-muted">{c.body}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 

@@ -20,7 +20,13 @@ const story = [
 export default function MeetMyCentrePage() {
   return (
     <>
-      <PageHero eyebrow="Meet my centre" title="A story about my first visit to C.A.N" lead="Read this together before your child's first visit. Knowing what a place looks like and what will happen there can turn a big unknown into something small and manageable." />
+      <PageHero
+        eyebrow="Meet my centre"
+        title="A story about my first visit to C.A.N"
+        lead="Read this together before your child's first visit. Knowing what a place looks like and what will happen there can turn a big unknown into something small and manageable."
+        tone="amber"
+        mascotSrc="/mascot/bird-nest-rest.png"
+      />
 
       <Section>
         <Card tone="soft" className="max-w-3xl">
